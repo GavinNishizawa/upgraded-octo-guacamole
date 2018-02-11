@@ -6,6 +6,13 @@ install:
 script:
   - npm run test
   - npm run build
+deploy:
+  provider: pages
+  skip-cleanup: true
+  keep-history: true
+  local-dir: "build/"
+  on:
+    branch: development
 branches:
   only:
   - development
