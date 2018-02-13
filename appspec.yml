@@ -1,0 +1,27 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /tmp/landingpad/
+hooks:
+  BeforeInstall:
+    - location: server-scripts/before-install
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: server-scripts/after-install
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: server-scripts/application-stop
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: server-scripts/application-start
+      timeout: 300
+      runas: root
+  ValidateService:
+    - location: server-scripts/validate-service
+      timeout: 300
+      runas: root
+

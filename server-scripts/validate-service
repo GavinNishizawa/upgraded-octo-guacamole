@@ -1,0 +1,3 @@
+#!/bin/bash
+echo ValidateService >> /tmp/mylog.log
+
